@@ -1,0 +1,81 @@
+Last login: Fri Jul 18 12:21:57 on ttys000
+Kerrys-MacBook-Air:~ kerrymui$ irb
+irb(main):001:0> new_options = {user: 'codeschool', lang: 'fr', password: 'dunno'}
+=> {:user=>"codeschool", :lang=>"fr", :password=>"dunno"}
+irb(main):002:0> new_options.except(:password)
+NoMethodError: undefined method `except' for {:user=>"codeschool", :lang=>"fr", :password=>"dunno"}:Hash
+	from (irb):2
+	from /Users/kerrymui/.rbenv/versions/2.0.0-p247/bin/irb:12:in `<main>'
+irb(main):003:0> 
+  [Restored]
+Last login: Tue Jul 22 14:54:46 on console
+Kerrys-MacBook-Air:~ kerrymui$ irb
+irb(main):001:0> a = []
+=> []
+irb(main):002:0> a.class
+=> Array
+irb(main):003:0> a.methods
+=> [:inspect, :to_s, :to_a, :to_ary, :frozen?, :==, :eql?, :hash, :[], :[]=, :at, :fetch, :first, :last, :concat, :<<, :push, :pop, :shift, :unshift, :insert, :each, :each_index, :reverse_each, :length, :size, :empty?, :find_index, :index, :rindex, :join, :reverse, :reverse!, :rotate, :rotate!, :sort, :sort!, :sort_by!, :collect, :collect!, :map, :map!, :select, :select!, :keep_if, :values_at, :delete, :delete_at, :delete_if, :reject, :reject!, :zip, :transpose, :replace, :clear, :fill, :include?, :<=>, :slice, :slice!, :assoc, :rassoc, :+, :*, :-, :&, :|, :uniq, :uniq!, :compact, :compact!, :flatten, :flatten!, :count, :shuffle!, :shuffle, :sample, :cycle, :permutation, :combination, :repeated_permutation, :repeated_combination, :product, :take, :take_while, :drop, :drop_while, :bsearch, :pack, :entries, :sort_by, :grep, :find, :detect, :find_all, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :all?, :any?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :each_entry, :each_slice, :each_cons, :each_with_object, :chunk, :slice_before, :lazy, :nil?, :===, :=~, :!~, :class, :singleton_class, :clone, :dup, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :freeze, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]
+irb(main):004:0> a.sort
+=> []
+irb(main):005:0> a.methods.sort
+=> [:!, :!=, :!~, :&, :*, :+, :-, :<<, :<=>, :==, :===, :=~, :[], :[]=, :__id__, :__send__, :all?, :any?, :assoc, :at, :bsearch, :chunk, :class, :clear, :clone, :collect, :collect!, :collect_concat, :combination, :compact, :compact!, :concat, :count, :cycle, :define_singleton_method, :delete, :delete_at, :delete_if, :detect, :display, :drop, :drop_while, :dup, :each, :each_cons, :each_entry, :each_index, :each_slice, :each_with_index, :each_with_object, :empty?, :entries, :enum_for, :eql?, :equal?, :extend, :fetch, :fill, :find, :find_all, :find_index, :first, :flat_map, :flatten, :flatten!, :freeze, :frozen?, :grep, :group_by, :hash, :include?, :index, :inject, :insert, :inspect, :instance_eval, :instance_exec, :instance_of?, :instance_variable_defined?, :instance_variable_get, :instance_variable_set, :instance_variables, :is_a?, :join, :keep_if, :kind_of?, :last, :lazy, :length, :map, :map!, :max, :max_by, :member?, :method, :methods, :min, :min_by, :minmax, :minmax_by, :nil?, :none?, :object_id, :one?, :pack, :partition, :permutation, :pop, :private_methods, :product, :protected_methods, :public_method, :public_methods, :public_send, :push, :rassoc, :reduce, :reject, :reject!, :remove_instance_variable, :repeated_combination, :repeated_permutation, :replace, :respond_to?, :reverse, :reverse!, :reverse_each, :rindex, :rotate, :rotate!, :sample, :select, :select!, :send, :shift, :shuffle, :shuffle!, :singleton_class, :singleton_methods, :size, :slice, :slice!, :slice_before, :sort, :sort!, :sort_by, :sort_by!, :taint, :tainted?, :take, :take_while, :tap, :to_a, :to_ary, :to_enum, :to_s, :transpose, :trust, :uniq, :uniq!, :unshift, :untaint, :untrust, :untrusted?, :values_at, :zip, :|]
+irb(main):006:0> a.instance_variables
+=> []
+irb(main):007:0> exit
+Kerrys-MacBook-Air:~ kerrymui$ pwd
+/Users/kerrymui
+Kerrys-MacBook-Air:~ kerrymui$ ls
+Applications	Documents	Library		Pictures	my_awesome_app	synctunes
+Calibre Library	Downloads	Movies		Public		pgadmin.log	temp
+Desktop		Dropbox		Music		README.md	railsbridge	temporary
+Kerrys-MacBook-Air:~ kerrymui$ subl self.rb
+Kerrys-MacBook-Air:~ kerrymui$ ruby self.rb 
+FooBar
+Kerrys-MacBook-Air:~ kerrymui$ ruby self.rb 
+#<FooBar:0x007fc182a7e9c8>
+Kerrys-MacBook-Air:~ kerrymui$ ruby super.rb 
+arg
+Kerrys-MacBook-Air:~ kerrymui$ ruby super.rb 
+super.rb:3:in `initialize': wrong number of arguments (2 for 1) (ArgumentError)
+	from super.rb:12:in `initialize'
+	from super.rb:17:in `new'
+	from super.rb:17:in `<main>'
+Kerrys-MacBook-Air:~ kerrymui$ ruby super.rb 
+arg
+extra
+Kerrys-MacBook-Air:~ kerrymui$ ruby super.rb 
+super.rb:3:in `initialize': wrong number of arguments (2 for 1) (ArgumentError)
+	from super.rb:12:in `initialize'
+	from super.rb:17:in `new'
+	from super.rb:17:in `<main>'
+Kerrys-MacBook-Air:~ kerrymui$ ruby super.rb 
+arg
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+I called to_s!
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+I called to_s!
+#<Game:0x007fcf6509aab0>
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+Kerrys-MacBook-Air:~ kerrymui$ 
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+I called to_s!
+#<Game:0x007fea6413aaa0>
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+I called to_s!
+#<Game:0x007f9f521ae9d0>
+Kerrys-MacBook-Air:~ kerrymui$ ruby implicit_to_s.rb 
+I called to_s!
+Kerrys-MacBook-Air:~ kerrymui$ irb
+irb(main):001:0> s = "my tsring"
+=> "my tsring"
+irb(main):002:0> a = [1,2,3]
+=> [1, 2, 3]
+irb(main):003:0> "#{a}"
+=> "[1, 2, 3]"
+irb(main):004:0> a
+=> [1, 2, 3]
+irb(main):005:0> a.to_s
+=> "[1, 2, 3]"
+irb(main):006:0> gma
