@@ -1,8 +1,5 @@
 class PicturesController < ApplicationController
 
-	http_basic_authenticate_with name: "kerry", password: "mui",
-	except: [:index, :show]
-
 	def index
 		@pictures = Picture.all
 	end
