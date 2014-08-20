@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
-  get 'users/create'
 
   resources :pictures do
     resources :comments
   end
 
   resources :users, :only => [:new, :create]
-  
+  resources :sessions, :only => [:new, :create, :destroy]  
   root :to => "pictures#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
