@@ -1,6 +1,9 @@
 <p>
 	<strong> Commenter:</strong>
-	<%= comment.commenter %>
+	<% current_user.id != nil %> 
+	<!-- how can I get the user's id/email to sho up as the commenter?  -->
+		<%= comment.commenter %> 
+	<% end %>
 </p>
 
 <p>

@@ -4,11 +4,17 @@ class CommentsController < ApplicationController
 	def show
 		@comment = Comment.find(params[:id])
 	end
-	
+
 	def create
 		@picture = Picture.find(params[:picture_id])
 		@comment = @picture.comments.create(comment_params)
-		redirect_to picture_path(@picture)
+		@comment.user_id = current_user.id
+
+		if @comment.save
+			redirect_to picture_path(@picture), notice: "Comment created successfully"
+		else
+			render "pictures/show"
+		end	
 	end
 
 	def destroy
