@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :pictures do
-    resources :comments
+    resources :comments, :only => [:show, :create, :destroy]
   end
 
   resources :users, :only => [:new, :create]
