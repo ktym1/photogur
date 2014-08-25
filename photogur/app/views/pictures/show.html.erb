@@ -4,9 +4,10 @@
 
 <%= image_tag @picture.url %>
 
+<%= image_tag @picture.image_url(:thumb) if picture.image? %>
+
 <h2> Comments </h2>
 	<%= render @picture.comments %>
-
 
 <h2> Add a comment </h2>
 
