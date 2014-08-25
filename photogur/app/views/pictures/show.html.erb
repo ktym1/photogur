@@ -4,7 +4,10 @@
 
 <%= image_tag @picture.url %>
 
-<%= image_tag @picture.image_url(:thumb) if picture.image? %>
+<%= link_to "Upvote", like_picture_path(@picture), method: :put %> <%= @picture.up_score %>
+<%= link_to "Downvote", dislike_picture_path(@picture), method: :put %> <%= @picture.down_score %>
+
+
 
 <h2> Comments </h2>
 	<%= render @picture.comments %>

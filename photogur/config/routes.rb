@@ -4,6 +4,13 @@ Rails.application.routes.draw do
     resources :comments, :only => [:show, :create, :destroy]
   end
 
+  resources :pictures do
+    member do
+      put "like", to: "pictures#upvote"
+      put "dislike", to: "pictures#downvote"
+    end
+  end
+
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]  
   root :to => "pictures#index"

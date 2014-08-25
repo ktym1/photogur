@@ -7,5 +7,13 @@ class Picture < ActiveRecord::Base
 	validates :url, presence: true
 
 	mount_uploader :image, ImageUploader
+	acts_as_votable
 
+	def up_score
+		self.get_upvotes.size
+	end
+
+	def down_score
+		self.get_downvotes.size
+	end
 end

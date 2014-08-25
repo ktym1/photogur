@@ -41,6 +41,18 @@ class PicturesController < ApplicationController
 		redirect_to pictures_url
 	end
 
+	def upvote
+		@picture = Picture.find(params[:id])
+		@picture.liked_by current_user
+		redirect_to @picture
+	end
+
+	def downvote
+		@picture = Picture.find(params[:id])
+		@picture.downvote_from current_user
+		redirect_to @picture
+	end
+
 	private
 	def picture_params
 		params.require(:picture).permit(:artist, :title, :url, :image)
