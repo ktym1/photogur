@@ -4,7 +4,7 @@ class Picture < ActiveRecord::Base
 	
 	validates :artist, presence: true
 	validates :title, presence: true
-	validates :url, presence: true
+	# validates :url, presence: true
 
 	mount_uploader :image, ImageUploader
 
