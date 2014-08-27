@@ -1,6 +1,8 @@
 <h1> Pictures (<%= @pictures.length %>)</h1>
 <%= link_to "Add a New Picture", "/pictures/new" %>
 
+<%= paginate @pictures %>
+
 <% @pictures.each do |picture| %>
 	<p> <%= picture[:title] %>, <%= picture[:artist] %> </p>
 
