@@ -12,6 +12,7 @@
 <h2> Comments </h2>
 	<%= render @picture.comments %>
 
+<% if current_user %>
 <h2> Add a comment </h2>
-
 <%= render 'comments/form'%>
+<% end %>

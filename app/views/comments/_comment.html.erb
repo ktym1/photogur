@@ -11,7 +11,9 @@
 </p>
 
 <p> 
-	<%= link_to "Delete Comment", [comment.picture, comment],
-		method: :delete,
-		data: {confirm: "Are you sure?"} %>
+	<% if current_user && comment.user == current_user %>
+		<%= link_to "Delete Comment", [comment.picture, comment],
+			method: :delete,
+			data: {confirm: "Are you sure?"} %>
+	<% end %>
 </p>
