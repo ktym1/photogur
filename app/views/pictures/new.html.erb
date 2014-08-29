@@ -2,6 +2,15 @@
 
 <%= link_to "Back to Pictures", pictures_url %>
 
+<p>
+	<% if !@picture.errors.messages.blank? %>
+		<p> Oops - some errors prevented this from saving: </p>
+		<%= @picture.errors.messages each do |messages| %>
+			<%= message %>
+		<% end %>
+	<% end %> 
+</p>
+
 <%= form_for @picture, :html=> {:multipart => true} do |f| %>
 	<p> 
 		<%= f.label :artist %> <br>
