@@ -5,7 +5,7 @@
 <p>
 	<% if !@picture.errors.messages.blank? %>
 		<p> Oops - some errors prevented this from saving: </p>
-		<%= @picture.errors.messages each do |messages| %>
+		<%= @picture.errors.messages.each do |message| %>
 			<%= message %>
 		<% end %>
 	<% end %> 
@@ -23,12 +23,6 @@
 	<p>
 		<%= f.file_field :image %>
 
-	</p>
-	<p> 
-		<%= f.label :remote_image_url, "or image URL" %> <br>
-		<%= f.text_field :remote_image_url %>
-	</p>
-	
 	<p>
 		<%= f.submit "Save" %>
 	</p>
