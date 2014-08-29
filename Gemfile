@@ -41,4 +41,3 @@ gem 'bcrypt', '~> 3.1.7'
 gem "mini_magick"
 gem "carrierwave"
 gem "acts_as_votable", "~> 0.10.0"
-gem 'pry', :group => :development
