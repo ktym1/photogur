@@ -4,9 +4,21 @@
 
 <%= image_tag @picture.url %>
 
-<%= link_to "Upvote", like_picture_path(@picture), method: :put %> <%= @picture.up_score %>
-<%= link_to "Downvote", dislike_picture_path(@picture), method: :put %> <%= @picture.down_score %>
+   	<% if current_user %>
+		<%= link_to "Upvote", like_picture_path(@picture), method: :put %> <%= @picture.up_score %>
+	<% else %>
+		Upvote: <%= @picture.up_score %>
+	<% end %>
 
+	
+	
+	<% if current_user %>
+		<%= link_to "Downvote", dislike_picture_path(@picture), method: :put %> <%= @picture.down_score %>
+	<% else %>
+		Downvote: <%= @picture.down_score %>
+	<% end %>
+
+	 
 
 
 <h2> Comments </h2>
