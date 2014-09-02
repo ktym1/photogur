@@ -5,7 +5,7 @@
 
 <p><%= @picture[:title] %>, <%= @picture[:artist] %></p>
 
-<%= image_tag @picture.image.thumb.url %>
+<%= image_tag @user.picture.image.thumb.url %>
 
    	<% if current_user %>
 		<%= link_to "Upvote", like_picture_path(@picture), method: :put %> <%= @picture.up_score %>
