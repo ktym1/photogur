@@ -1,11 +1,12 @@
 class Picture < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
-	has_many :users, :through => :comments
-	
+	has_many :commenting_users, :through => :comments, :source => :user
+	belongs_to :user
+
 	validates :artist, presence: true
 	validates :title, presence: true
 	# validates :url, presence: true if Proc.new {|picture| picture.image.blank? }
-	# validates :user_id, presence: true
+	validates :user_id, presence: true
 	
 	mount_uploader :image, ImageUploader
 	acts_as_votable

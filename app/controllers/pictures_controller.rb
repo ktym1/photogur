@@ -9,6 +9,8 @@ class PicturesController < ApplicationController
 
 	def create
 		@picture = Picture.new(picture_params)
+		@picture.user = current_user
+		
 		if @picture.save
 			redirect_to pictures_url
 		else
@@ -54,6 +56,6 @@ class PicturesController < ApplicationController
 
 	private
 	def picture_params
-		params.require(:picture).permit(:artist, :title, :image, :user_id)
+		params.require(:picture).permit(:artist, :title, :image)
 	end
 end
