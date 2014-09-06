@@ -44,4 +44,6 @@ gem "acts_as_votable", "~> 0.10.0"
 gem 'zurb-foundation'
 group :development do
 	gem 'rails_layout'
+	gem 'pry'
 end
+

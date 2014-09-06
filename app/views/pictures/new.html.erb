@@ -5,7 +5,7 @@
 <p>
 	<% if !@picture.errors.messages.blank? %>
 		<p> Oops - some errors prevented this from saving: </p>
-		<%= @picture.errors.messages.each do |message| %>
+		<% @picture.errors.messages.each do |message| %>
 			<%= message %>
 		<% end %>
 	<% end %> 

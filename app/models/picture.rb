@@ -18,3 +18,4 @@ class Picture < ActiveRecord::Base
 		self.get_downvotes.size
 	end
 end
+
