@@ -12,8 +12,6 @@
 	<% else %>
 		Upvote: <%= @picture.up_score %>
 	<% end %>
-
-	
 	
 	<% if current_user %>
 		<%= link_to "Downvote", dislike_picture_path(@picture), method: :put %> <%= @picture.down_score %>
@@ -24,10 +22,13 @@
 	 
 
 
-<h2> Comments </h2>
+<h4> Comments </h4>
 	<%= render @picture.comments %>
 
 <% if current_user %>
-<h2> Add a comment </h2>
-<%= render 'comments/form'%>
+	<h2> Add a comment </h2>
+	<%= render 'comments/form'%>
+<% else %>
+	<p>Please <%= link_to "log in", new_session_path %> to add a comment.</p> 
 <% end %>
+
