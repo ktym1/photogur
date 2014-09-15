@@ -6,7 +6,8 @@ class Picture < ActiveRecord::Base
 	validates :artist, presence: true
 	validates :title, presence: true
 	# validates :url, presence: true if Proc.new {|picture| picture.image.blank? }
-	validates :user_id, presence: true
+	validates :user_id, presence: true, numericality: {
+		only_integer: true}
 	
 	mount_uploader :image, ImageUploader
 	acts_as_votable
