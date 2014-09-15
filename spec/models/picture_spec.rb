@@ -12,7 +12,13 @@
 require "spec_helper"
 
 describe Picture do
-	it "is valid with a artist, title, and user_id"
+	it "is valid with a artist, title, and user_id" do
+		picture = Picture.new(
+			artist: "John",
+			title: "display pic",
+			user_id: 2)
+		expect(picture).to be_valid
+	end
 	it "is invalid without an artist"
 	it "is invalid without a title"
 	it "is invalid without a user_id"
