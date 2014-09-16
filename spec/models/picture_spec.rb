@@ -19,8 +19,18 @@ describe Picture do
 			user_id: 2)
 		expect(picture).to be_valid
 	end
-	it "is invalid without an artist"
-	it "is invalid without a title"
-	it "is invalid without a user_id"
+
+	it "is invalid without an artist" do
+		expect(Picture.new(artist: nil)).to have(1).errors_on(:artist)
+	end
+
+	it "is invalid without a title" do
+		expect(Picture.new(title:nil)).to have(1).errors_on(:title)
+	end
+		
+	it "is invalid without a user_id" do
+		expect(Picture.new(user_id: nil)).to have(1).errors_on(:user_id)
+	end
 	# it "returns an upvote/downvote? count...?"
+	# it "returns an user_id that belongs to an existing user
 end

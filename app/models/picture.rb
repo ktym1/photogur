@@ -8,6 +8,8 @@ class Picture < ActiveRecord::Base
 	# validates :url, presence: true if Proc.new {|picture| picture.image.blank? }
 	validates :user_id, presence: true, numericality: {
 		only_integer: true}
+
+	#validation to make sure it belongs to an actual user, not just any user_id?
 	
 	mount_uploader :image, ImageUploader
 	acts_as_votable
