@@ -32,8 +32,9 @@ describe Picture do
 		
 	# Test for valid_id Type to be an integer
 		
-	# it "is invalid without a user_id as an integer" do
-	# 	expect(Picture.new(user_id: 1)).to be_kind_of(Numeric)
+	# it "is invalid if user_id is not an integer" do
+	# 	picture = FactoryGirl.build(:picture, :artist, user_id: nil)
+	# 		expect(picture).to have(1).errors_on(:user_id)
 	# end
 
 	
