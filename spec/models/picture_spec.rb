@@ -49,6 +49,6 @@ describe Picture do
 	# end
 
 	it "has a valid factory" do
-		expect(FactoryGirl.build(:picture)).to be_valid
+		expect(build(:picture)).to be_valid
 	end
 end
