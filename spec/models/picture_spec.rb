@@ -21,11 +21,13 @@ describe Picture do
 	end
 
 	it "is invalid without an artist" do
-		expect(Picture.new(artist: nil)).to have(1).errors_on(:artist)
-	end
+		picture = FactoryGirl.build(:picture, artist: nil)
+			expect(picture).to have(1).errors_on(:artist)
+		end
 
 	it "is invalid without a title" do
-		expect(Picture.new(title: nil)).to have(1).errors_on(:title)
+		picture = FactoryGirl.build(:picture, title: nil)
+		expect(picture).to have(1).errors_on(:title)
 	end
 		
 	# Test for valid_id Type to be an integer
