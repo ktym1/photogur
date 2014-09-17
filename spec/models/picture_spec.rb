@@ -28,10 +28,22 @@ describe Picture do
 		expect(Picture.new(title: nil)).to have(1).errors_on(:title)
 	end
 		
+	# Test for valid_id Type to be an integer
+		
 	# it "is invalid without a user_id as an integer" do
 	# 	expect(Picture.new(user_id: 1)).to be_kind_of(Numeric)
 	# end
 
-	# it "returns an upvote/downvote? count...?"
+	
+
+	# it "returns a picture score that is one upvote higher" do
+	# 	picture = Picture.new(artist: "John",
+	# 		title: "display pic",
+	# 		user_id: 1)
+
+	# 	picture.up_score
+	# 	expect(Picture.up_score
+	# end
+
 	
 end
