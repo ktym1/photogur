@@ -1,8 +1,10 @@
+require "faker"
+
 FactoryGirl.define do
 
 	factory :picture do
-		artist "John"
-		title "display pic"
-		sequence(:user_id) {|n| "#{n}"}
+		artist { Faker::Name.artist }
+		title { Faker::Title.title }
+		user_id { Faker::Number.user_id}
 	end
 end
