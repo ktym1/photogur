@@ -45,5 +45,7 @@ describe Picture do
 	# 	expect(Picture.up_score
 	# end
 
-	
+	it "has a valid factory" do
+		expect(FactoryGirl.build(:picture)).to be_valid
+	end
 end
