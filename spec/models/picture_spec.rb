@@ -25,12 +25,13 @@ describe Picture do
 	end
 
 	it "is invalid without a title" do
-		expect(Picture.new(title:nil)).to have(1).errors_on(:title)
+		expect(Picture.new(title: nil)).to have(1).errors_on(:title)
 	end
 		
-	it "is invalid without a user_id" do
-		expect(Picture.new(user_id: nil)).to have(1).errors_on(:user_id)
-	end
+	# it "is invalid without a user_id as an integer" do
+	# 	expect(Picture.new(user_id: 1)).to be_kind_of(Numeric)
+	# end
+
 	# it "returns an upvote/downvote? count...?"
-	# it "returns an user_id that belongs to an existing user
+	
 end
