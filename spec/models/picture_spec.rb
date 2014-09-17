@@ -13,21 +13,15 @@ require "spec_helper"
 
 describe Picture do
 	it "is valid with a artist, title, and user_id" do
-		picture = Picture.new(
-			artist: "John",
-			title: "display pic",
-			user_id: 2)
-		expect(picture).to be_valid
+		expect(build(:picture)).to be_valid
 	end
 
 	it "is invalid without an artist" do
-		picture = FactoryGirl.build(:picture, artist: nil)
-			expect(picture).to have(1).errors_on(:artist)
+			expect(build(:picture, artist: nil)).to have(1).errors_on(:artist)
 		end
 
 	it "is invalid without a title" do
-		picture = FactoryGirl.build(:picture, title: nil)
-		expect(picture).to have(1).errors_on(:title)
+		expect(build(:picture, title: nil)).to have(1).errors_on(:title)
 	end
 		
 	# Test for valid_id Type to be an integer
