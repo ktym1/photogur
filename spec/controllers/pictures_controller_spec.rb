@@ -1,9 +1,17 @@
 require "spec_helper"
 
 describe PicturesController do
+	
 	describe "GET #index" do
-		it "populates an array of pictures"
-		it "renders the :index view"
+		# context "with params[:artist]" do
+		# 	it "populates an array of pictures"
+		# 	get :index, artist: "john"
+		# 	expect(assigns(:pictures)).to
+			
+		it "renders the :index template" do
+			get :index
+			expect(response).to render_template :index
+		end
 	end
 
 
