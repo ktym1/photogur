@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 	def get_picture
 	@picture = Picture.find(params[:id])
 		# if @picture.exists?				
-		# redirect_to pictures_path
+			# redirect_to pictures_path
 		# else 
 		# 	@picture
 		# end
