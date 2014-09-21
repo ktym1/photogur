@@ -32,10 +32,17 @@ describe PicturesController do
 	end
 
 	describe "GET #new" do
-		it "assigns a new Picture to @picture"
-		it "renders the :new template"
+		it "assigns a new Picture to @picture" do
+			get :new
+			expect(assigns(:picture)).to be_a_new(Picture)
 		end
 
+		it "renders the :new template" do
+			get :new
+			expect(response).to render_template :new
+		end
+	end
+	
 	describe "POST #create" do
 		context "with valid attributes"do
 			it "saves the new picture in the database"
