@@ -42,7 +42,22 @@ describe PicturesController do
 			expect(response).to render_template :new
 		end
 	end
-	
+
+	describe 'GET #edit' do
+		it "assigns the requested picture to @picture" do
+			picture = create(:picture)
+			get :edit, id: picture
+			expect(assigns(:picture)).to eq picture
+	end
+
+		it "renders the :edit template" do
+			picture = create(:picture)
+			get :edit, id: picture
+			expect(response).to render_template :edit
+		end
+	end	
+
+
 	describe "POST #create" do
 		context "with valid attributes"do
 			it "saves the new picture in the database"
