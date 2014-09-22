@@ -87,12 +87,26 @@ describe PicturesController do
 		context "with invalid attributes" do
 			it "does not save the new picture in the database" do
 				expect{
-					post :create, picture: attributes_for(:invalid_picture)}.to_not change(Picture, :count)
+					post :create, picture: attributes_for(:invalid_picture)
+					}.to_not change(Picture, :count)
 			end
 
 			it "re-renders the :new template" do
 				post :create, picture: attributes_for(:invalid_picture)
 					expect(response).to render_template :new	
+			end
+		end
+	end
+
+	describe 'PATCH #update' do
+		before :each do
+			@picture = create(:picture, artist: "John", title: "Display Pic", user_id: 1)
+		end
+
+		context "valid attributes" do
+			it "locates the requested @picture" do
+				patch :update, id: @picture, picture: attributes_for(:picture)
+				expect(assigns(:picture)).to eq(@picture)
 			end
 		end
 	end
