@@ -59,15 +59,35 @@ describe PicturesController do
 
 
 	describe "POST #create" do
-		context "with valid attributes"do
-			it "saves the new picture in the database"
-			it "redirects to the home page"
+		before :each do
+			@pictures = [
+				attributes_for(:picture),
+				attributes_for(:picture),
+				attributes_for(:picture)
+			]
+	end
+
+		context "with valid attributes" do
+			it "saves the new picture in the database" do
+				expect{
+					post :create, picture: attributes_for(:picture, 
+						pictures_attributes: @pictures)
+					}.to change(Picture, :count).by(1)
+				
+			end
+
+			it "redirects to pictures#show" do
+				post :create, picture: attributes_for(:picture,
+					pictures_attributes: @pictures)
+				expect(response).to redirect_to picture_path(assigns[:picture])
+			end
+		
 		end
 
 		context "with invalid attributes" do
 			it "does not save the new picture in the database"
 			it "re-renders the :new template"
 			end
-		end
+	end
 
 end
