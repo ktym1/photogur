@@ -88,10 +88,12 @@ describe PicturesController do
 			it "does not save the new picture in the database" do
 				expect{
 					post :create, picture: attributes_for(:invalid_picture)}.to_not change(Picture, :count)
-				
 			end
-			it "re-renders the :new template"
-			end
-	end
 
+			it "re-renders the :new template" do
+				post :create, picture: attributes_for(:invalid_picture)
+					expect(response).to render_template :new	
+			end
+		end
+	end
 end
