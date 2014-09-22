@@ -30,7 +30,7 @@ class PicturesController < ApplicationController
 
 	def update
 		if @picture.update_attributes(picture_params)
-			redirect_to '/pictures/#{@picture.id}'
+			redirect_to @picture
 		else
 			render :edit
 		end
