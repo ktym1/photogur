@@ -108,6 +108,16 @@ describe PicturesController do
 				patch :update, id: @picture, picture: attributes_for(:picture)
 				expect(assigns(:picture)).to eq(@picture)
 			end
-		end
+		
+
+			it "changes @picture's attributes" do
+				patch :update, id: @picture,
+					picture: attributes_for(:picture, artist: "kerry", title: "mui", user_id: 1)
+				@picture.reload 
+					expect(@picture.artist).to eq("kerry") 
+					expect(@picture.title).to eq("mui")
+					expect(@picture.user_id).to eq(1)
+			end
+		end	
 	end
 end
