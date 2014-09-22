@@ -118,6 +118,11 @@ describe PicturesController do
 					expect(@picture.title).to eq("mui")
 					expect(@picture.user_id).to eq(1)
 			end
+		
+			it "redirects to the updated picture" do
+				patch :update, id: @picture, picture: attributes_for(:picture)
+				expect(response).to redirect_to @picture
+			end
 		end	
 	end
 end
