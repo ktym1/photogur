@@ -123,6 +123,21 @@ describe PicturesController do
 				patch :update, id: @picture, picture: attributes_for(:picture)
 				expect(response).to redirect_to @picture
 			end
+		end
+
+		context "with invalid attributes" do
+			it "does not change the picture's attributes" do
+				patch :update, id: @picture, picture: attributes_for(:picture, artist: "kerry", title: "mui", user_id: nil)
+				@picture.reload
+					expect(@picture.artist).to_not eq("kerry")
+					expect(@picture.title).to_not eq("mui")
+					expect(@picture.title).to eq(1)
+			end
+
+			it "re-renders the edit template" do
+				patch :update, id: @picture, picture: attributes_for(:invalid_picture)
+					expect(response).to render_template :edit
+			end
 		end	
 	end
 end
