@@ -131,7 +131,7 @@ describe PicturesController do
 				@picture.reload
 					expect(@picture.artist).to_not eq("kerry")
 					expect(@picture.title).to_not eq("mui")
-					expect(@picture.title).to eq(1)
+					expect(@picture.user_id).to eq(1)
 			end
 
 			it "re-renders the edit template" do
