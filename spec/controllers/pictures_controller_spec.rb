@@ -150,5 +150,10 @@ describe PicturesController do
 			expect{ delete :destroy, id: @picture
 				}.to change(Picture, :count).by(-1)
 		end
+	
+		it "redirects to picturess#index" do
+			delete :destroy, id: @picture
+			expect(response).to redirect_to pictures_url
+		end
 	end
 end
