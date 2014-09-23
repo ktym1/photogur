@@ -140,4 +140,15 @@ describe PicturesController do
 			end
 		end	
 	end
+
+	describe 'DELETE #destroy' do
+		before :each do
+			@picture = create(:picture)
+		end
+	
+		it "deletes the picture" do
+			expect{ delete :destroy, id: @picture
+				}.to change(Picture, :count).by(-1)
+		end
+	end
 end
