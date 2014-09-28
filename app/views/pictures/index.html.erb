@@ -5,18 +5,15 @@
 <% end %>
 
 
-
-	<ul class="small-block-grid-3">
-		<li>
-				<% @pictures.each do |picture| %>
+	<div class="row">
+		<ul class="small-block-grid-2-medium-block-grid-6 large-black-grid-6">
+		
+			<% @pictures.each do |picture| %> 
 			  
-			  <div class="image">
-					<%= link_to image_tag(picture.image.thumb.url), "/pictures/#{picture.id}" %> 
-				</div>
-				<p> <%= picture[:title] %>, <%= picture[:artist] %> </p>
+			<li> <%= link_to image_tag(picture.image.thumb.url), "/pictures/#{picture.id}" %> </li>
+						
 			<% end %>
-		</li>
-	</ul>
-
-
+			
+		</ul>
+	</div>
 
