@@ -2,12 +2,11 @@ class PicturesController < ApplicationController
 	before_action :get_picture, :only => [:edit, :update, :show, :destroy, :upvote, :downvote]
 
 	def get_picture
-	@picture = Picture.find(params[:id])
-		# if @picture.exists?				
-			# redirect_to pictures_path
-		# else 
-		# 	@picture
-		# end
+		begin
+			@picture = Picture.find(params[:id])
+		rescue
+			render "not-found"
+		end
 	end
 
 	def index
