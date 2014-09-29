@@ -1,15 +1,21 @@
-<h4> Pictures </h4>
-
 <% if current_user %>
 	<%= link_to "Add a New Picture", "/pictures/new" %>
 <% end %>
 
-
+<div class="intro-text"> 
 	<div class="row">
-		<ul class="small-block-grid-2-medium-block-grid-6 large-black-grid-6">
-			<% @pictures.each do |picture| %>   
-			<li> <%= link_to image_tag(picture.image.thumb.url), "/pictures/#{picture.id}" %> </li>
-			<% end %>
-		</ul>
+		<div class="large-12 columns">
+			<h4> Images of the Internet </h4>
+		</div>
 	</div>
+</div>
+
+<div class="row">
+	<ul class="small-block-grid-2-medium-block-grid-4 large-block-grid-5">
+		<% @pictures.each do |picture| %>   
+		<li> <%= link_to image_tag(picture.image.thumb.url), "/pictures/#{picture.id}" %> </li>
+		<% end %>
+	</ul>
+</div>
+
 <%= render "user" %>
