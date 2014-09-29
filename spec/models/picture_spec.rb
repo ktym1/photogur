@@ -11,38 +11,35 @@
 
 require "spec_helper"
 
-describe Picture do
-	it "is valid with a artist, title, and user_id" do
-		expect(build(:picture)).to be_valid
+describe Picture do 
+	let(:picture) { FactoryGirl.build(:picture) }
+
+	it "has a valid factory" do
+		expect(picture).to be_valid
 	end
 
 	it "is invalid without an artist" do
-			expect(build(:picture, artist: nil)).to have(1).errors_on(:artist)
+			picture.artist = nil
+			expect(picture).to have(1).errors_on(:artist)
 		end
 
 	it "is invalid without a title" do
-		expect(build(:picture, title: nil)).to have(1).errors_on(:title)
+		picture.title = nil
+		expect(picture).to have(1).errors_on(:title)
 	end
-		
-	# Test for valid_id Type to be an integer
-		
-	# it "is invalid if user_id is not an integer" do
-	# 	picture = FactoryGirl.build(:picture, :artist, user_id: nil)
-	# 		expect(picture).to have(1).errors_on(:user_id)
-	# end
-
 	
-
-	# it "returns a picture score that is one upvote higher" do
-	# 	picture = Picture.new(artist: "John",
-	# 		title: "display pic",
-	# 		user_id: 1)
-
-	# 	picture.up_score
-	# 	expect(Picture.up_score
-	# end
-
-	it "has a valid factory" do
-		expect(build(:picture)).to be_valid
+	it "is invalid without a user_id" do
+		picture.user_id = "abc"
+		expect(picture).to have(1).errors_on(:user_id)
 	end
+	
+	describe "#up_score" do	
+		it "should increase upvote score" do
+			picture.save
+			expect(picture.up_score).to eq(0) 
+			picture.up_score 
+			expect(picture.up_score).to eq(1)
+		end
+	end
+
 end
