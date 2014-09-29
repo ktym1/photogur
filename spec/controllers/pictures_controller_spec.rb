@@ -58,11 +58,9 @@ describe PicturesController do
 	end	
 
 
-	describe "POST #create" do
+	describe "POST #create", :focus => true do
 		before :each do
 			@pictures = [
-				attributes_for(:picture),
-				attributes_for(:picture),
 				attributes_for(:picture)
 			]
 	end
